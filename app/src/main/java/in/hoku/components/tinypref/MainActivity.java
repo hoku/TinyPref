@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 /**
- * Created by hoku. on 2016/05/16.
+ * Created by hoku.
  */
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -32,15 +32,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void countUp() {
-        int count = TinyPref.loadInt(this, COUNT_PREF_KEY, 0);
+        int count = TinyPref.getInt(this, COUNT_PREF_KEY, 0);
         count++;
-        TinyPref.saveInt(this, COUNT_PREF_KEY, count);
+        TinyPref.putInt(this, COUNT_PREF_KEY, count);
 
         refreshCountText(count);
     }
 
     private void countClear() {
-        TinyPref.saveInt(this, COUNT_PREF_KEY, 0);
+        TinyPref.putInt(this, COUNT_PREF_KEY, 0);
 
         refreshCountText(0);
     }

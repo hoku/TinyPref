@@ -6,76 +6,91 @@ import android.content.SharedPreferences;
 import java.util.Set;
 
 /**
- * Created by hoku. on 2016/05/16.
+ * Name:    TinyPref
+ * URL:     https://github.com/hoku/TinyPref
+ * License: CC0
+ * <p/>
+ * Created by hoku.
  */
 public class TinyPref {
 
     private static final String PREF_NAME = "in.hoku.components.tinypref.TinyPref";
 
-    public static void saveString(Context c, String key, String value) {
+    public static void putString(Context c, String key, String value) {
         SharedPreferences.Editor editor = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
         editor.putString(key, value);
         editor.commit();
     }
 
-    public static void saveInt(Context c, String key, int value) {
+    public static void putInt(Context c, String key, int value) {
         SharedPreferences.Editor editor = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
         editor.putInt(key, value);
         editor.commit();
     }
 
-    public static void saveFloat(Context c, String key, float value) {
+    public static void putFloat(Context c, String key, float value) {
         SharedPreferences.Editor editor = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
         editor.putFloat(key, value);
         editor.commit();
     }
 
-    public static void saveBoolean(Context c, String key, boolean value) {
+    public static void putBoolean(Context c, String key, boolean value) {
         SharedPreferences.Editor editor = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
         editor.putBoolean(key, value);
         editor.commit();
     }
 
-    public static void saveLong(Context c, String key, long value) {
+    public static void putLong(Context c, String key, long value) {
         SharedPreferences.Editor editor = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
         editor.putLong(key, value);
         editor.commit();
     }
 
-    public static void saveStringSet(Context c, String key, Set<String> value) {
+    public static void putStringSet(Context c, String key, Set<String> value) {
         SharedPreferences.Editor editor = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
         editor.putStringSet(key, value);
         editor.commit();
     }
 
 
-    public static String loadString(Context c, String key, String defValue) {
+    public static String getString(Context c, String key, String defValue) {
         SharedPreferences pref = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return pref.getString(key, defValue);
     }
 
-    public static int loadInt(Context c, String key, int defValue) {
+    public static int getInt(Context c, String key, int defValue) {
         SharedPreferences pref = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return pref.getInt(key, defValue);
     }
 
-    public static float loadFloat(Context c, String key, float defValue) {
+    public static float getFloat(Context c, String key, float defValue) {
         SharedPreferences pref = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return pref.getFloat(key, defValue);
     }
 
-    public static boolean loadBoolean(Context c, String key, boolean defValue) {
+    public static boolean getBoolean(Context c, String key, boolean defValue) {
         SharedPreferences pref = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return pref.getBoolean(key, defValue);
     }
 
-    public static long loadLong(Context c, String key, long defValue) {
+    public static long getLong(Context c, String key, long defValue) {
         SharedPreferences pref = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return pref.getLong(key, defValue);
     }
 
-    public static Set<String> loadStringSet(Context c, String key, Set<String> defValue) {
+    public static Set<String> getStringSet(Context c, String key, Set<String> defValue) {
         SharedPreferences pref = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return pref.getStringSet(key, defValue);
+    }
+
+
+    public static void remove(Context c, String key) {
+        SharedPreferences.Editor editor = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
+        editor.remove(key);
+    }
+
+    public static void clear(Context c) {
+        SharedPreferences.Editor editor = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit();
+        editor.clear();
     }
 }

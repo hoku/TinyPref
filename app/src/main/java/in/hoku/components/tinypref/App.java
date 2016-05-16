@@ -3,7 +3,7 @@ package in.hoku.components.tinypref;
 import android.app.Application;
 
 /**
- * Created by hoku. on 2016/05/16.
+ * Created by hoku.
  */
 public class App extends Application {
 
@@ -11,6 +11,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        TinyPref.saveInt(this, "COUNT", 100);
+        TinyPref.putInt(this, "COUNT", 100);
     }
 }
